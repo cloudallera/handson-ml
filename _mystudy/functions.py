@@ -48,13 +48,13 @@ def prepare_country_stats(oecd_bli, gdp_per_capita):
                                'Life satisfaction']].iloc[keep_indices]
 
 
-## 하우스 데이터 다운로드 & 읽기 함수 만들기
+## 하우스 데이터 다운로드 & 읽기 함수용 variable
 DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
 HOUSING_PATH = os.path.join("datasets", "housing")
 HOUSING_URL = DOWNLOAD_ROOT + "datasets/housing/housing.tgz"
 
 
-# 데이터 추출(다운로드 & 압축 해제) 함수
+# 하우스 데이터 추출(다운로드 & 압축 해제) 함수
 def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
     if not os.path.isdir(housing_path):
         os.makedirs(housing_path)
@@ -66,7 +66,7 @@ def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
     # print("housing data fetching complete!!!")
 
 
-# 데이터 읽어 들이는 함수
+# 하우스 데이터 읽어 들이는 함수
 def load_housing_data(housing_path=HOUSING_PATH):
     csv_path = os.path.join(housing_path, "housing.csv")
     return pd.read_csv(csv_path)
